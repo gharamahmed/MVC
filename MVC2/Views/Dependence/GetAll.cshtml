@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<html>
+<head>
+    <title>Dependence</title>
+        <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 80%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+    </style>
+    </head>
+<body>
+    <h2>data Dependence</h2>
+    <p style="text-align:center ;color :purple">@TempData["msg"]</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Birthdate</th>
+            <th>Gender</th>
+            <th>Relationship</th>
+         </tr>
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td><a href="Edit/@item.Name" style="text-decoration:none">@item.Name</a></td>
+                <td>@item.Birthdate</td>
+                <td>@item.Sex</td>
+                <td>@item.Relationship</td>
+             </tr>
+    }
+    </table>
+    <a href="AddDependence">Add Dependence</a>
+
+</body>
+</html>

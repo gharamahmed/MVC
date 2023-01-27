@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<html>
+<head>
+    <title>Departments</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>data Departments</h2>
+    @*<p style="text-align:center ;color :purple">@TempData["msg"]</p>*@
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>StartDate</th>
+            <th>Manager Employee</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><a href="Edit/@item.Number" style="text-decoration:none">@item.Name</a></td>
+                <td>@item.startdate</td>
+                <td>@item.employeeSSN</td>
+                
+           </tr>
+         @*   <tr >
+                <th colspan="3">
+                     <a href="/Project/AddProject/@item.Number">Add Project</a>
+                </th>
+             </tr>*@
+        }
+    </table>
+    <a href="AddDepartment">Add Department</a>
+
+</body>
+</html>

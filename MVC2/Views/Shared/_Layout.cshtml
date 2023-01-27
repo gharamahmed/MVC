@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <style>
+        aside {
+           /*// width: 30%;*/
+            margin-top: 10px;
+            padding-left: 15px;
+            /*margin-left: 10px;*/
+            font-style: italic;
+            background-color: lightgray;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            margin-top:8%;
+            background-color: black;
+            color: white;
+        }
+     
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Index">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Employee/GetAll">Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Department/GetAll">Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Project/GetAll">Project</a>
+                    </li>
+                   
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav"></div>
+            <div class="collapse navbar-collapse" id="navbarNav"></div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Employee/Login">Login</a>
+                    </li>
+
+                </ul>
+             </div>
+                
+        </div>
+    </nav>
+    <div class="row">
+    <div class="col-3">
+        <aside>
+            <h1>Company</h1>
+                @if(int.Parse(@Context.Request.Cookies["ReqNum"]) >= 1 && int.Parse(@Context.Request.Cookies["ReqNum"]) <= 10)
+                {
+                    <h2>1 Star</h2>
+                }
+                else if (int.Parse(@Context.Request.Cookies["ReqNum"]) >= 11 && int.Parse(@Context.Request.Cookies["ReqNum"]) <= 20)
+                {
+                    <h2>2 Stars</h2>
+                }
+                else if(int.Parse(@Context.Request.Cookies["ReqNum"]) >= 21 && int.Parse(@Context.Request.Cookies["ReqNum"]) <= 30)
+                {
+                    <h2>3 Stars</h2>
+                }
+                 else if(int.Parse(@Context.Request.Cookies["ReqNum"]) >= 31 && int.Parse(@Context.Request.Cookies["ReqNum"]) <= 40)
+                {
+                    <h2>4 Stars</h2>
+                 }
+                else
+                {
+                    <h2>5 Stars</h2>
+                }
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Vero, placeat quisquam commodi quia architecto, enim ex,
+                vel molestiae odio assumenda quis aliquid? Aperiam quis,
+                corrupti vel esse molestias exercitationem odit veniam autem sint
+                ullam sed praesentium sapiente omnis rem dolores ducimus reprehenderit incidunt
+                harum est numquam ipsa aliquid? Tempora nam quae sapiente architecto dolor
+                asperiores libero pariatur, excepturi in sunt. Architecto illum sapiente debitis
+                iure nihil alias asperiores? Tempora nostrum vel reiciendis modi blanditiis! Nam,
+                atque dolores. Saepe tempora culpa commodi aut obcaecati sit vero illum.
+            </p>
+        </aside>
+    </div>
+        <div class="container  col-9">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    </div>
+    <footer>
+        Footer
+        © 2023 GitHub, Inc.
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+</body>
+</html>

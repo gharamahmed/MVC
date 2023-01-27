@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<html>
+<head>
+    <title>Edit Hours</title>
+</head>
+<body>
+    <h1 style="text-align:center">Edit Hours </h1>
+
+    <form style="text-align:center" action="/Works_ON/Update">
+        <div style="margin:10px">
+            <label>Hours</label>
+            <input id="Name" name="Hours" type="number" value="@Model.Hours" />
+        </div>
+       
+         <input id="Name" name="ESSN" type="number" value="@Model.ESSN" style="visibility:hidden" />
+        <input id="Name" name="Pnum" type="number" value="@Model.Pnum" style="visibility:hidden" />
+        <div style="margin:10px">
+            <a href="/Works_ON/Delete/@Model.ESSN/@Model.Pnum">Delete </a>
+            <input type="submit" value="Update" />
+        </div>
+       
+    </form>
+ </body>
+</html>

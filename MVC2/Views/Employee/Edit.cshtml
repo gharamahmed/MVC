@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   }
+
+<html>
+<head>
+    
+</head>
+<body >
+    <h1 style="text-align:center">Edit Employee</h1>
+    <form style="text-align:center" action=" /Employee/Update">
+        <div style="margin:10px;visibility:hidden">
+            <label>SSN</label>
+            <input id="SSN" name="SSN" type="text" value="@Model.SSN" />
+        </div>
+        <div style="margin:10px">
+            <label>FName</label>
+            <input id="FName" name="Fname" type="text" value="@Model.Fname" />
+        </div>
+        <div style="margin:10px">
+            <label>MidName</label>
+            <input id="MidName" name="Minit" type="text" value="@Model.Minit" />
+        </div>
+        <div style="margin:10px">
+            <label>LName</label>
+            <input id="LName" name="Lname" type="text" value="@Model.Lname" />
+        </div>
+        <div style="margin:10px">
+
+            <label>Address</label>
+            <input id="Address" name="Address" type="text" value="@Model.Address" />
+        </div>
+        <div style="margin:10px">
+
+            <label>Salary</label>
+            <input id="Salary" name="Salary" type="number" value="@Model.Salary" />
+        </div>
+        <div style="margin:10px">
+            <label>Birthdate</label>
+            <input id="Bdate" name="Bdate" type="datetime" value="@Model.Bdate" />
+        </div>
+        <div style="margin:10px">
+            <a href="/Employee/Delete/@Model.SSN">Delete </a>
+            <input type="submit" value="Update" />
+
+        </div>
+    </form>
+</body>
+</html>
+

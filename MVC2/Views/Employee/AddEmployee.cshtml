@@ -1,0 +1,77 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<html>
+    <head>
+
+    </head>
+<body >
+    <h1 style="text-align:center">Add Employee</h1>
+
+    <form style="text-align:center" action="Add">
+        <div style="margin:10px">
+        <label>FName</label>
+        <input id="FName" name="Fname" type="text" />
+        </div>
+        <div style="margin:10px">
+        <label>MidName</label>
+        <input id="MidName" name="Minit" type="text" />
+        </div>
+        <div style="margin:10px">
+        <label>LName</label>
+        <input id="LName" name="Lname" type="text" />
+        </div>
+        <div style="margin:10px">
+
+        <label>Address</label>
+        <input id="Address" name="Address" type="text" />
+        </div>
+        <div style="margin:10px">
+
+        <label>Salary</label>
+        <input id="Salary" name="Salary" type="number" />
+        </div>
+        <div style="margin:10px">
+        <label>Birthdate</label>
+        <input id="Salary" name="Bdate" type="datetime" />
+        </div>
+        <div style="margin:10px">
+
+        <label>Gender</label>
+        <input type="radio" id="Male" name="Gender" value="Male">
+        <label for="Male">Male</label>
+        <input type="radio" id="Female" name="Gender" value="Female">
+        <label for="Female">Female</label>
+        </div>
+        @*<div style="margin:10px">
+
+        <label>Project</label>
+        <select id="Pnum" name="Pnum">
+            <option value="">Choose Project</option>
+            @foreach (var ins in Model)
+            {
+                <option value="@ins.Number">@ins.Name</option>
+            }
+        </select>
+        </div>*@
+          <div style="margin:10px">
+
+        <label>Super</label>
+            <select id="super" name="super">
+            <option value="">Choose Super</option>
+                @foreach (var ins in Model)
+                {
+                    <option value="@ins.SSN">@ins.Fname</option>
+                }
+        </select>
+        </div>
+        <div style="margin:10px">
+
+        <input type="submit" value="Add" />
+        </div>
+    </form>
+
+    </body>
+</html>

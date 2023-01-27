@@ -1,0 +1,84 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<html>
+<head>
+    <title>Departments</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>data Departments</h2>
+    @*<p style="text-align:center ;color :purple">@TempData["msg"]</p>*@
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>StartDate</th>
+            <th>Manager Employee</th>
+        </tr>
+        @foreach (var item in ViewBag.Departments)
+        {
+            <tr>
+                <td><a href="/Department/Edit/@item.Number" style="text-decoration:none">@item.Name</a></td>
+                <td>@item.startdate</td>
+                <td>@item.employeeSSN</td>
+
+            </tr>
+            <tr>
+                <th colspan="3" style="text-align:center">
+                    Projects
+                </th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Department Id</th>
+                @foreach (var item2 in item.projects)
+                {
+                <tr>
+                    <td><a href="/Project/Edit/@item2.Number" style="text-decoration:none">@item2.Name</a></td>
+                    <td>@item2.Location</td>
+                    <td>@item2.DepartmentId</td>
+                </tr>
+                }
+
+            </tr>
+            <tr>
+                <th colspan="3" style="text-align:center">
+                    Employees
+                </th>
+            </tr>
+            <tr>
+                <th>Hours</th>
+                <th>ProjectNumber</th>
+                <th>EmployeeId</th>
+                
+                @foreach (var item3 in ViewBag.WorksOn)
+                {
+                <tr>
+                    <td><a href="/Works_ON/Edit/@item3.ESSN/@item3.Pnum"> @item3.Hours </a></td>
+                    <td>@item3.Pnum</td>
+                    <td>@item3.ESSN</td>
+                </tr>
+                }
+
+            </tr>
+        }
+    </table>
+    <a href="AddEmployee">Add Employee</a>
+
+</body>
+</html>

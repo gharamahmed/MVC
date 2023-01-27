@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<html>
+<head>
+    <title>Add Project</title>
+</head>
+<body>
+    <h1 style="text-align:center">Add Project</h1>
+
+    <form style="text-align:center" action="Add">
+        <div style="margin:10px">
+            <label>Name</label>
+            <input id="Name" name="Name" type="text" />
+        </div>
+        <div style="margin:10px">
+            <label>Location</label>
+            <input id="location" name="Location" type="text" />
+        </div>
+        @*<div style="margin:10px">
+            <label>Department Id</label>
+            <input id="DepartmentId" name="DepartmentId" type="text" value="@Model.Number"/>
+        </div>*@
+        <div style="margin:10px">
+
+            <label>Department</label>
+            <select id="DepartmentId" name="DepartmentId">
+                <option value="">Choose Department</option>
+                @foreach (var ins in Model)
+                {
+                    <option value="@ins.Number">@ins.Name</option>
+                }
+            </select>
+        </div>
+        <div style="margin:10px">
+
+            <input type="submit" value="Add" />
+        </div>
+    </form>
+</body>
+</html>

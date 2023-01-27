@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   // Layout = "_Layout";
+}
+<html>
+<head>
+    <title>Employees</title>
+       <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 80%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+    </style>
+</head>
+<body >
+    <h2>data Employees</h2>
+      <table>
+            <tr>
+                <th>FName</th>
+                <th>MidName</th>
+                <th>Lname</th>
+                <th>Address</th>
+                <th>Birthdate</th>
+                <th>Gender</th>
+                <th>Salary</th>
+            </tr>
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td><a href="Edit/@item.SSN" style="text-decoration:none">@item.Fname</a></td>
+                <td>@item.Minit</td>
+                <td>@item.Lname</td>
+                <td>@item.Address</td>
+                <td>@item.Bdate</td>
+                <td>@item.Gender</td>
+                <td>@item.Salary</td>
+            </tr>
+        }
+    </table>
+    <a href="AddEmployee">Add Employee</a>
+
+</body>
+</html>
