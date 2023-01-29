@@ -24,7 +24,7 @@ namespace MVC2.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddProject(project project)
+        public IActionResult Add(project project)
         {
             context.Projects.Add(project);
             context.SaveChanges();
@@ -40,7 +40,7 @@ namespace MVC2.Controllers
             return View("Edit",Oldproject);
         }
         [HttpPost]
-        public IActionResult EditProject(project project)
+        public IActionResult Edit(project project)
         {
             var Oldproject = context.Projects.SingleOrDefault(e => e.Number == project.Number);
             Oldproject.Name = project.Name;
