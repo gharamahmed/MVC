@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MVC2.Models;
 namespace MVC2.Controllers
 {
@@ -49,5 +50,6 @@ namespace MVC2.Controllers
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+       
     }
 }

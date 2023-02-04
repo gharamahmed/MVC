@@ -51,5 +51,18 @@ namespace MVC2.Controllers
             }
             return View();
         }
+        public IActionResult PartialProject()
+        {
+            ViewBag.Employees = new SelectList(context.Employees.ToList(), "SSN", "Fname");
+            return View();
+        }
+        public IActionResult partialpro(int id)
+        {
+            //List<project>projects= context.Projects.Include(e=>e.works_Ons).Where(e=>e.ESSN==id).ToList();
+            var projects = context.Works.Where(e => e.ESSN == id).Select(e => new { e.Pnum, PName = e.Project.Name });
+            ViewBag.Projects = new SelectList(projects, "Pnum", "PName");
+            return PartialView("_PartialProject");
+
+        }
     }
 }

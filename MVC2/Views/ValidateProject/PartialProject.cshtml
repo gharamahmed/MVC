@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model works_on;
+<h1>Project Details</h1>
+<form method="post">
+    <label asp-for="Employee"></label>
+    <select  id="ESSN" asp-for="ESSN" asp-items="ViewBag.Employees" class="form-control">
+        <option value="">Choose One</option>
+    </select>
+<div id="EmpSSN">
+    <label asp-for="Project"></label>
+    <select asp-for="Pnum"  class="form-control">
+        <option value="">Choose One</option>
+    </select>
+</div>
+</form>
+@section Scripts{
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+    <script src="/js/Js2.js"></script>
+}
